@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_161334) do
+ActiveRecord::Schema.define(version: 2019_09_15_163416) do
 
   create_table "forecasts", force: :cascade do |t|
     t.float "latitude"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2019_09_15_161334) do
     t.string "weatherData"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "forecast_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["forecast_id"], name: "index_locations_on_forecast_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,4 +37,6 @@ ActiveRecord::Schema.define(version: 2019_09_15_161334) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "locations", "forecasts"
+  add_foreign_key "locations", "users"
 end
