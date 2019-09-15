@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_003049) do
+ActiveRecord::Schema.define(version: 2019_09_15_161334) do
+
+  create_table "forecasts", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "weatherData"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
