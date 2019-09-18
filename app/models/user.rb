@@ -3,4 +3,6 @@ class User < ApplicationRecord
 
     has_many :locations
     has_many :forecasts, through: :locations
+
+    validates :username, :email, presence: true
 end
