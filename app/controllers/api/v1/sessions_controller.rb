@@ -15,7 +15,7 @@ class Api::V1::SessionsController < ApplicationController
 
     def get_current_user
         if logged_in?
-            redner json: UserSerializer.new(current_user)
+            render json: UserSerializer.new(current_user)
         else
             render json: {
                 error: "No one is logged in."

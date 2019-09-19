@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'locations/index'
-  get 'locations/show'
-  get 'locations/create'
-  get 'locations/update'
-  get 'locations/destroy'
-  get 'forecasts/index'
-  get 'forecasts/show'
   post "/api/v1/login", to: "api/v1/sessions#create"
   post "/api/v1/signup", to: "api/v1/users#create"
   delete "/api/v1/logout", to: "api/v1/sessions#destroy"
