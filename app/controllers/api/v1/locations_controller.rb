@@ -1,14 +1,10 @@
 class Api::V1::LocationsController < ApplicationController
 
   def index
-    if logged_in?
-       @location = current_user.locations 
+    
+       @location = Location.all
        render json: @locations
-    else
-      render json: {
-        error: "You must be logged in to view saved locations."
-      }
-    end
+
   end
 
   def show
@@ -16,7 +12,7 @@ class Api::V1::LocationsController < ApplicationController
   end
 
   def create
-    @location = current.user.locations.build(loaction_params)
+    # @location = current.user.locations.build(loaction_params)
   end
 
   def update

@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3000', 'http://localhost:3001'
+    origins 'http://localhost:3000', 'http://localhost:3001', 'https://api.darksky.net/forecast/', 'https://api.mapbox.com/geocoding/v5/mapbox.places/'
 
     resource '*',
       headers: :any,
