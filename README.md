@@ -1,24 +1,12 @@
-# README
+# Stormcrow Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the rails server for my final react-redux project. This is a weather app that uses the Dark Sky api and Google geocoding api to get weather locally and across many different cities.
 
-Things you may want to cover:
+This app uses Ruby 2.6.2 and Rails 6.0.0
 
-* Ruby version
+Fork and clone this repo and then 
+Run $ bundle install
+Run $ rake db:migrate
 
-* System dependencies
+After migration run rails s -p3001
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
