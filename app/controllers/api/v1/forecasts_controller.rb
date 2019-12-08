@@ -1,7 +1,7 @@
 class Api::V1::ForecastsController < ApplicationController
 
   def index
-    @forecast = Forecast.all 
+    @forecasts = Forecast.all 
     render json: @forecasts
   end
 
