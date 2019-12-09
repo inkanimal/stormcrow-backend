@@ -8,7 +8,7 @@ class Api::V1::SessionsController < ApplicationController
             render json: UserSerializer.new(@user), status: :ok
         else
             render json: {
-                error: "Invalid Credentials"
+                error: "Invalid Username or Password."
             }
         end
     end
