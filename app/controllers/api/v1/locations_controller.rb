@@ -2,7 +2,7 @@ class Api::V1::LocationsController < ApplicationController
 
   def index
     
-       @location = Location.all
+       @locations = Location.all
        render json: @locations
 
   end
