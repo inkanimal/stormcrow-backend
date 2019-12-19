@@ -15,15 +15,14 @@ class Api::V1::SessionsController < ApplicationController
 
     def get_current_user
         # if user not logged in return true and end 
-        byebug
-        if logged_in? !=true
-           
-            return render json: {
+        
+        if !logged_in? 
+           return render json: {
                 error: "No one is logged in"
             }
-        logged_in?
-          render json: UserSerializer.new(current_user)
         end
+        render json: UserSerializer.new(current_user)
+       
         # if logged_in?
         #     render json: UserSerializer.new(current_user)
         # else
